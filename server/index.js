@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const colors = require('colors');
 require('dotenv').config();
 
@@ -10,6 +11,8 @@ const connectDB = require('./config/db');
 const port = process.env.PORT || 5000;
 
 const app = express();
+
+app.use(cors());
 
 // Connect to MongoDB
 connectDB();
